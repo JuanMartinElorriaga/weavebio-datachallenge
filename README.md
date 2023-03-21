@@ -8,9 +8,9 @@ All the ETL process has been orchestrated and monitored using Airflow.
 ### Tech stack
 
 - Docker and Docker-Compose
-- Neo4j
-- Python
-- Airflow
+- Neo4j (docker container)
+- Python (docker container)
+- Airflow (docker container)
 - Bash scripting
 
 ### Features
@@ -25,7 +25,7 @@ All the ETL process has been orchestrated and monitored using Airflow.
 - Use _bolt_ protocol instead of HTTP for optimal performance
 - Created _index_ to improve the performance of protein searching
 
-### How to deploy:
+### How to deploy
 
 **Prerequisite**: Docker and docker-compose to be installed. 
 
@@ -35,9 +35,11 @@ All the ETL process has been orchestrated and monitored using Airflow.
 
 **Step 2:** Run `docker-compose up`. You can also add the `-d` flag for detached mode.
 
-**Step 3:** Run `sh init_airflow_setup.sh` (Run this only for initial deployment). This will initialize the airflow instance, create the user with password and upgrade the database. Note that in case of using Windows OS, the bash script can be run this way: `winpty sh init_airflow_setup.sh`.
+**Step 3:** Run `sh init_airflow_setup.sh` (Run this only for initial deployment). This will initialize the airflow instance, create the user with password and upgrade the database. 
+Note that in case of using Windows OS, the bash script can be run this way in a Git Bash: `winpty sh init_airflow_setup.sh`.
 
-**Step 4:** Go to http://localhost:8080 and login with user: _airflow_test_user_ and password: _airflow_test_password_ as specified in `init_airflow_setup.sh` script. Also, for only the first time, the neo4j connector needs to be configured by going to _Admin -> Connections_, and setting a filling the form with the following values:
+**Step 4:** Go to http://localhost:8080 and login with user: _airflow_test_user_ and password: _airflow_test_password_ as specified in `init_airflow_setup.sh` script. 
+Also, for only the first time, the neo4j connector needs to be configured by going to _Admin -> Connections_, and setting a filling the form with the following values:
 1. Go to the Airflow UI and click on the *"Admin"* menu.
 2. Click on _"Connections"_ to open the connections page.
 3. Click on the _"Create"_ button to create a new connection.
