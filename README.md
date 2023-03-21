@@ -5,6 +5,8 @@ _tl;dr_: The challenge is to create a data pipeline that will ingest a UniProt X
 The following data pipeline follows the process of downloading the `data/Q9Y261.xml` data file, parse it to extract the useful information and finally create a graph model and store it in a graph database. An additional query step has been made to show how to query the database. 
 All the ETL process has been orchestrated and monitored using Airflow.
 
+The Airflow DAG can be seen in `airflow-data -> dags -> airflow_DAG1.py`
+
 ### Tech stack
 
 - Docker and Docker-Compose
